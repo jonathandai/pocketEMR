@@ -1,0 +1,49 @@
+{
+"visits": {
+        "12064273040195392": {
+            "date": "1/20/2017",
+            "time": "4:30 PM",
+            "hospital": "Northshore Hospital",
+            "vitals": {
+                "temperature": 97.8,
+                "bloodPressure": "100/66",
+                "pulse": "80 BPM"
+            },
+            "vaccines": "Flu shot",
+            "notes": "Clean bill of health!"
+
+        },
+        "51498472915966370": {
+            "date": "3/28/2018",
+            "time": "12:00 PM",
+            "hospital": "Northwestern Urgent Care",
+            "vitals": {
+                "temperature": 98.8,
+                "bloodPressure": "105/68",
+                "pulse": "75 BPM"
+            },
+            "notes": "Clean bill of health!"
+        },
+        "10686354557628304": {
+            "date": "1/15/2019",
+            "time": "8:00 AM",
+            "hospital": "Northwestern Hospital",
+            "vitals": {
+                "temperature": 99.0,
+                "bloodPressure": "103/69",
+                "pulse": "80 BPM"
+            },
+            "mri": {
+                "type": "head",
+                "findings": "No major inflammation. Minor lesions from past trauma that need monitoring."
+            },
+            "notes": "Minor lesions might be cause for concern if Jason is experiencing chronic headaches. Prescribed Naproxen."
+
+        }
+
+    },
+    
+    "allergies": ["Shellfish", "Peanut"],
+    "immunizations": ["Measles", "Mumps", "Rubella", "Pertussis"],
+    "currentPrescriptions": ["Naproxen", "Fluticasone"]
+}
