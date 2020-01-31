@@ -1,0 +1,34 @@
+{
+    "visits": {
+        "1/20/2017": {
+            "date": "1/20/2017", 
+            "time": "3:30 PM", 
+            "hospital": "Northshore Hospital",
+            "vitals": {
+                "temperature": 97.8,
+                "bloodPressure": "100/66",
+                "pulse": "80 BPM"
+            }
+        },
+        "3/28/2018": {
+            "hospital": "Northwestern Urgent Care",
+            "vitals": {
+                "temperature": 98.8,
+                "bloodPressure": "105/68",
+                "pulse": "75 BPM"
+            }
+        },
+        "1/15/2019": {
+            "hospital": "Northwestern Hospital",
+            "vitals": {
+                "temperature": 99.0,
+                "bloodPressure": "103/69",
+                "pulse": "80 BPM"
+            }
+        }
+
+    },
+    "allergies": ["Shellfish", "Peanut"],
+    "immunizations": ["Measles", "Mumps", "Rubella", "Pertussis"]
+}
+  
