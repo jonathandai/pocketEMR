@@ -20,6 +20,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 // import PersonPinIcon from '@material-ui/icons/PersonPin';
+import AssignmentIcon from '@material-ui/icons/Assignment';
+import HealingIcon from '@material-ui/icons/Healing';
 
 // Tabs
 import PropTypes from 'prop-types';
@@ -39,29 +41,23 @@ const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
   root: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.paper,
     display: 'flex',
+    height: '100vh',
+    marginTop: 70
+  },
+  tabs: {
+    borderRight: `1px solid ${theme.palette.divider}`,
+  },
+  healingIcon: {
+    width: 50,
+    height: 50
   },
   appBar: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
-  },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  toolbar: theme.mixins.toolbar,
-  content: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
-    padding: theme.spacing(3),
-  },
+    marginBottom: 50
+  }
 }));
-
-
-// Tabs
 
 const TabPanel = (props) => {
   const { children, value, index, ...other } = props;
@@ -98,7 +94,7 @@ const renderVisitInSidebar = () => {
   // console.log(Object.entries(PatientData.visits))
   return(
     Object.entries(PatientData.visits).map(([key, value], i)=> 
-        <Tab label={value.date} {...a11yProps(i)} />
+        <Tab icon={<AssignmentIcon/>} label={value.date} {...a11yProps(i)} />
     )
   )
 }
@@ -144,10 +140,14 @@ const VerticalTabs = () => {
   };
 
   return (
+    <div>
+    <AppBar color="secondary" className={classes.appBar}>
+        <HealingIcon className={classes.healingIcon} color="primary"/> Pocket EMR
+      </AppBar>
     <div className={classes.root}>
       <Tabs
         orientation="vertical"
-        variant="scrollable"
+        variant="fullWidth"
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
@@ -156,6 +156,7 @@ const VerticalTabs = () => {
         {renderVisitInSidebar()}
       </Tabs>
     {renderVisit(value)}
+    </div>
     </div>
   );
 }
