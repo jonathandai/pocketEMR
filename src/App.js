@@ -12,6 +12,13 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 // import PersonPinIcon from '@material-ui/icons/PersonPin';
 
 // Tabs
@@ -99,10 +106,30 @@ const renderVisitInSidebar = () => {
 const renderVisit = (value) => {
   // console.log(PatientData)
   return(
-    Object.entries(PatientData.visits).map(([key, v], i)=> 
+    Object.entries(PatientData.visits).map(([key, v], i)=>
         <TabPanel value={value} index={i}>    
-          {v.hospital}
-      </TabPanel>
+        {console.log(v)}
+        <TableContainer component={Paper}>
+          <Table aria-label="simple table">
+            <TableBody>
+                <TableRow key={key}>
+                  <TableCell component="th" scope="row">{v.date}</TableCell>
+                  <TableCell align="right">{v.time}</TableCell>
+                  <TableCell align="right">{v.hospital}</TableCell>
+                  <TableCell align="right">Vitals</TableCell>
+                  <TableCell align="right"></TableCell>
+                </TableRow>
+                <TableRow key={key}>
+                  <TableCell component="th" scope="row"></TableCell>
+                  <TableCell align="right"></TableCell>
+                  <TableCell align="right"></TableCell>
+                  <TableCell align="right">{v.vitals.temperature}</TableCell>
+                  <TableCell align="right"></TableCell>
+                </TableRow>
+            </TableBody>
+          </Table>
+          </TableContainer>
+        </TabPanel>
     )
   )
 }
